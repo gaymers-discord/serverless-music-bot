@@ -1,0 +1,22 @@
+{
+  "name": "music-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "7z a dist/index.zip * -r -x!.git -xr!*.exe -xr!*.gz",
+    "publish": "aws lambda update-function-code --function-name gaymers-musicbot-test-play --zip-file fileb://dist/index.zip",
+    "prepublish": "npm run build"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.1.0",
+    "ffmpeg-binaries": "^3.2.2-3",
+    "lambduh-execute": "^1.3.0",
+    "moment": "^2.18.1",
+    "node-opus": "^0.2.6",
+    "opusscript": "0.0.3",
+    "ytdl-core": "^0.13.2"
+  }
+}
